@@ -11,7 +11,7 @@ entries:
   order-ec:
     - name: order-ec
       description: "Showcase: Ec lambda with orderCreated event and save in orderService. Inject orderService and have fun!"
-      version: 0.0.2
+      version: 0.0.1
   order-service-not-existing:
     - name: order-service-not-existing
       description: "Showcase: Ec lambda with orderCreated event and save in orderService. Inject orderService and have fun!"
