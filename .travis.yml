@@ -34,6 +34,7 @@ jobs:
      - git config --global user.name "Travis CI"
      # for tag x.y.z the branch name is: release-x.y
      - ./scripts/create_branch.sh
+     - git push https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}
     env:
     deploy:
       provider: releases

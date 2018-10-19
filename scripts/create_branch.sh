@@ -8,5 +8,4 @@ if [[ ${REVISION} -eq 0 ]]; then
   GIT_BRANCH=release-${MAJOR}.${MINOR}
   echo "Creating branch $GIT_BRANCH"
   git checkout -b ${GIT_BRANCH}
-  git push
 fi
