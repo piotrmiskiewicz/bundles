@@ -37,7 +37,7 @@ jobs:
      # for tag x.y.z the branch name is: release-x.y
      - export GIT_BRANCH=release-$(./scripts/branch_version.sh ${TRAVIS_TAG})
      # create a release branch for tag: x.y.0
-     - [[ "${TRAVIS_TAG}" =~ ^[0-9].[0-9].0$ ]] && git checkout -b $GIT_BRANCH
+     - [[ "${TRAVIS_TAG}" =~ ^[0-9].[0-9].0$ ]] && git checkout -b $GIT_BRANCH && git push
     env:
     deploy:
       provider: releases
