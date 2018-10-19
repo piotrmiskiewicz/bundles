@@ -30,6 +30,14 @@ jobs:
 #    if: (NOT type IN (pull_request))
     before_deploy:
      - ./scripts/convert.sh
+    after_deploy:
+     # create a branch if the version ends with 0
+     - git config --global user.email "builds@travis-ci.com"
+     - git config --global user.name "Travis CI"
+     # for tag x.y.z the branch name is: release-x.y
+     - export GIT_BRANCH=release-$(./scripts/branch_version.sh ${TRAVIS_TAG})
+     # create a release branch for tag: x.y.0
+     - [[ "${TRAVIS_TAG}" =~ ^[0-9].[0-9].0$ ]] && git checkout -b $GIT_BRANCH
     env:
     deploy:
       provider: releases
