@@ -6,5 +6,5 @@ entries:
       version: 0.0.3
   lambda-rc:
     - name: lambda-rc
-      description: "Lambda redis client"
+      description: "Lambda redis client. PK was here"
       version: 0.0.1
