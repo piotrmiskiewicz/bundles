@@ -14,68 +14,62 @@ Before you start, install:
 
 Follow these steps to configure your own bundles repository and to complete this Getting Started guide.
 
-### Create a fork
+### Create a fork and enable Travis CI with the GitHub repository
 
 1. Fork the [bundle repository](https://github.com/kyma-project/bundles).
 
-2. On your forked repository, create a `gh-pages` branch if it doesn't already exist.
+2. Go to the [GitHub](https://github.com) page.
 
-3. Go to the **Settings** tab. In the **GitHub Pages** section, set up **Source** to `gh-pages branch`.
+3 In your GitHub profile account, choose the **Settings** tab. In the left sidebar, click **Developer settings**.
 
-### Integrate Travis CI with the GitHub repository
+4. In the left sidebar, click **Personal access tokens**.
 
-1. Go to the [GitHub](https://github.com) page.
+5. Click **Generate new token**.
 
-2. In your GitHub profile account, choose the **Settings** tab. In the left sidebar, click **Developer settings**.
+6. Give your token a descriptive name.
 
-3. In the left sidebar, click **Personal access tokens**.
+7. Select the scope of the token `public_repo`.
 
-4. Click **Generate new token**.
+8. Click **Generate token** and copy your personal access token.
 
-5. Give your token a descriptive name.
+9. Go to [Travis CI](https://travis-ci.com/) and sign up with your GitHub account. Accept the **Authorization** of Travis CI.
 
-6. Select the scope of the token `public_repo`.
+10. Click the **Activate** button and select your forked bundles repository. Click the **Approve & Install** button to give Travis CI access to your forked `bundle` repository.
 
-7. Click **Generate token** and copy your personal access token.
+11. In the left sidebar, click **My Repositories** tab and choose your GitHub repository.
 
-8. Go to [Travis CI](https://travis-ci.com/) and sign up with your GitHub account. Accept the **Authorization** of Travis CI.
+12. Click the **More options** tab on the right and select **Settings**.
 
-9. Click the **Activate** button and select your forked bundles repository. Click the **Approve & Install** button to give Travis CI access to your forked `bundle` repository.
+13. Go to the **Environment Variables** section. Set **Name** as `GITHUB_TOKEN`. **Value** is equal to your GitHub personal access token. Click the **Add** button.
 
-10. In the left sidebar, click **My Repositories** tab and choose your GitHub repository.
-
-11. Click the **More options** tab on the right and select **Settings**.
-
-12. Go to the **Environment Variables** section. Set **Name** as `GITHUB_TOKEN`. **Value** is equal to your GitHub personal access token. Click the **Add** button.
-
-13. Go to the **More options** tab and select **Trigger build**. Select a master branch and click the **Trigger custom build** button.
+14. Go to the **More options** tab and select **Trigger build**. Select a master branch and click the **Trigger custom build** button.
 
 ### Create a bundle
 
 1. Create your bundle according to the [instruction](https://kyma-project.io/docs/latest/components/service-brokers#configuration-how-to-create-a-ybundle).
 
-2. Place your bundle into the `bundles/{repository}` directory.
+2. Place your bundle into the `bundles/` directory.
 
-3. Along your bundle directory create `index.yaml` which defines available bundles. 
+3. Along your bundle directory update `index.yaml` which defines available bundles. 
 Instruction how to create a valid file can be found [here](https://github.com/kyma-project/kyma/blob/master/docs/service-brokers/docs/011-configuration-helm-broker.md#configuring-the-helm-broker-externally).
 
 4. Commit changes and push to the master branch.
 
-5. Travis automatically launches new build. You can check build status on [travis-ci](https://travis-ci.com/) webpage.
+5. Travis automatically launches new build of the latest release. You can check build status on [travis-ci](https://travis-ci.com/) webpage. The (releasing document)[releasing.md] describes the process of tagging and releasing.
 
 ### Setup Helm Broker
 
 1. Go to your forked repository and click the **Settings** tab. Go to the **GitHub Pages** section and copy Github pages link.
   
 2. Set up the environment variable on the Helm Broker Deployment:
+
     ```
-    kubectl set env -n kyma-system deployment/core-helm-broker -e APP_REPOSITORY_BASE_URL=https://{user-name}.github.io/bundles/{repository}/
+    kubectl set env -n kyma-system deployment/core-helm-broker -e APP_REPOSITORY_BASE_URL=https://github.com/{github-user-name}/bundles/releases/download/latest/
     ```
     for example:
     ```
-    kubectl set env -n kyma-system deployment/core-helm-broker -e APP_REPOSITORY_BASE_URL=https://kyma-project.github.io/bundles/showcase/
+    kubectl set env -n kyma-system deployment/core-helm-broker -e APP_REPOSITORY_BASE_URL=https://github.com/kyma-project/bundles/releases/download/latest/
     ```
-
 
 3. Wait until the Helm Broker Pod is in the `READY` state. To check it, run this command:
     ```
