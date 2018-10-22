@@ -26,12 +26,12 @@ jobs:
   - stage: check
     script: ./scripts/checker.sh --helm-lint --directories ./bundles --helm-version v2.10.0
 
-  # creates a release from the tagged version from eny branch
+  # Creates a release from the tagged version from eny branch
   - stage: deploy
     before_deploy:
      - ./scripts/convert.sh
     after_deploy:
-     # create a branch if the version ends with 0
+     # Create a branch if the version ends with 0
      - ./scripts/create_release_branch_step.sh $TRAVIS_TAG https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}
     env:
     deploy:
@@ -45,7 +45,7 @@ jobs:
         # Only tagged commit triggers a release deploy
         tags: true
 
-  # create a latest release from last master commit
+  # Create a latest release from last master commit
   - stage: deploy
     if: (NOT type IN (pull_request)) AND (branch = master)
     before_deploy:
