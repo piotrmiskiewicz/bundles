@@ -13,8 +13,10 @@ git:
 notifications:
   email: false
 
+# Skip the script step: Don't execute 'go test'.
 script: skip
 
+# Do not execute build on latest tag.
 branch:
   except:
     - latest
@@ -24,17 +26,13 @@ jobs:
   - stage: check
     script: ./scripts/checker.sh --helm-lint --directories ./bundles --helm-version v2.10.0
 
-  # creates a release from the tagged version
+  # creates a release from the tagged version from eny branch
   - stage: deploy
     before_deploy:
      - ./scripts/convert.sh
     after_deploy:
      # create a branch if the version ends with 0
-     - git config --global user.email "builds@travis-ci.com"
-     - git config --global user.name "Travis CI"
-     # for tag x.y.z the branch name is: release-x.y
-     - ./scripts/create_branch.sh $TRAVIS_TAG
-     - git push https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}
+     - ./scripts/create_release_branch_step.sh $TRAVIS_TAG https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}
     env:
     deploy:
       provider: releases
@@ -47,15 +45,11 @@ jobs:
         # Only tagged commit triggers a release deploy
         tags: true
 
-  # creates a latest release from last master commit
+  # create a latest release from last master commit
   - stage: deploy
     if: (NOT type IN (pull_request)) AND (branch = master)
     before_deploy:
-     - git config --global user.email "builds@travis-ci.com"
-     - git config --global user.name "Travis CI"
-     - export GIT_TAG=latest
-     - git tag $GIT_TAG -a -m "Generated tag from TravisCI"
-     - git push https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG} $GIT_TAG -f
+     - ./scripts/create_latest_tag_step.sh https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}
      - ./scripts/convert.sh
     env:
     deploy:
