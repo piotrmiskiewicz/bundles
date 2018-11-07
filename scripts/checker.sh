@@ -111,7 +111,7 @@ function checkBundles() {
     do
         echo -e "${INVERTED}Checking bundles in directory ${directory}${NC}"
         for bundle in ${directory}/*/; do
-            executeCmd "checker ${bundle}"
+            executeCmd "bin/checker ${bundle}"
             if [ $? -eq 1 ];
             then
                 errOccurred=1
@@ -179,6 +179,6 @@ function lintHelmChartsIfRequested() {
 
 validateInputParams
 
-downloadChecker
+#downloadChecker
 checkBundles
 lintHelmChartsIfRequested
