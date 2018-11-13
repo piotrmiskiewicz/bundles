@@ -2,11 +2,35 @@
 
 <!-- toc -->
 
+- [latest (2018-11-13)](#latest-2018-11-13)
+- [0.53.0 (2018-11-13)](#0530-2018-11-13)
 - [latest (2018-11-09)](#latest-2018-11-09)
 - [0.50.0 (2018-11-09)](#0500-2018-11-09)
 - [0.9.0 (2018-10-26)](#090-2018-10-26)
 
 <!-- tocstop -->
+
+## latest (2018-11-13)
+
+#### :rocket: Enhancement
+* [#14](https://github.com/kyma-project/bundles/pull/14) Copy template for security issues ([@franpog859](https://github.com/franpog859))
+* Bundles repository versioning ([@PK85](https://github.com/PK85))
+
+#### Committers: 2
+- Franciszek Pogodziński ([@franpog859](https://github.com/franpog859))
+- Piotr Kopczyński ([@PK85](https://github.com/PK85))
+
+
+## 0.53.0 (2018-11-13)
+
+#### :rocket: Enhancement
+* [#14](https://github.com/kyma-project/bundles/pull/14) Copy template for security issues ([@franpog859](https://github.com/franpog859))
+* Bundles repository versioning ([@PK85](https://github.com/PK85))
+
+#### Committers: 2
+- Franciszek Pogodziński ([@franpog859](https://github.com/franpog859))
+- Piotr Kopczyński ([@PK85](https://github.com/PK85))
+
 
 ## latest (2018-11-09)
 
