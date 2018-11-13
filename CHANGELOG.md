@@ -3,12 +3,32 @@
 <!-- toc -->
 
 - [latest (2018-11-13)](#latest-2018-11-13)
+- [0.54.0 (2018-11-13)](#0540-2018-11-13)
+- [latest (2018-11-13)](#latest-2018-11-13-1)
 - [0.53.0 (2018-11-13)](#0530-2018-11-13)
 - [latest (2018-11-09)](#latest-2018-11-09)
 - [0.50.0 (2018-11-09)](#0500-2018-11-09)
 - [0.9.0 (2018-10-26)](#090-2018-10-26)
 
 <!-- tocstop -->
+
+## latest (2018-11-13)
+
+#### :rocket: Enhancement
+* [#15](https://github.com/piotrmiskiewicz/bundles/pull/15) wip ([@piotrmiskiewicz](https://github.com/piotrmiskiewicz))
+
+#### Committers: 1
+- Piotr Miśkiewicz ([@piotrmiskiewicz](https://github.com/piotrmiskiewicz))
+
+
+## 0.54.0 (2018-11-13)
+
+#### :rocket: Enhancement
+* [#15](https://github.com/piotrmiskiewicz/bundles/pull/15) wip ([@piotrmiskiewicz](https://github.com/piotrmiskiewicz))
+
+#### Committers: 1
+- Piotr Miśkiewicz ([@piotrmiskiewicz](https://github.com/piotrmiskiewicz))
+
 
 ## latest (2018-11-13)
 
