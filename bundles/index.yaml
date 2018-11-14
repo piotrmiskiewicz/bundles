@@ -3,4 +3,5 @@ entries:
   redis:
     - name: redis
       description: "Redis service."
+
       version: 0.0.3
