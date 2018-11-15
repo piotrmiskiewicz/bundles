@@ -2,10 +2,22 @@
 
 <!-- toc -->
 
+- [0.90.0 (2018-11-14)](#0900-2018-11-14)
 - [0.60.0 (2018-11-07)](#0600-2018-11-07)
 - [0.9.0 (2018-10-26)](#090-2018-10-26)
 
 <!-- tocstop -->
+
+## 0.90.0 (2018-11-14)
+
+#### :bug: Bug Fix
+* [#22](https://github.com/piotrmiskiewicz/bundles/pull/22) change110 ([@piotrmiskiewicz](https://github.com/piotrmiskiewicz))
+* [#21](https://github.com/piotrmiskiewicz/bundles/pull/21) Change 104 ([@piotrmiskiewicz](https://github.com/piotrmiskiewicz))
+* [#20](https://github.com/piotrmiskiewicz/bundles/pull/20) Change 103 ([@piotrmiskiewicz](https://github.com/piotrmiskiewicz))
+
+#### Committers: 1
+- Piotr Miśkiewicz ([@piotrmiskiewicz](https://github.com/piotrmiskiewicz))
+
 
 ## 0.60.0 (2018-11-07)
 
