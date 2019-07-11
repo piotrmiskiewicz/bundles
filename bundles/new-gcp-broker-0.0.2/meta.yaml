@@ -1,0 +1,11 @@
+name: new-gcp-broker
+version: 0.0.1
+id: cbc4ce74-b402-4ff6-b230-2a079cf1706d
+description: "Extends the Service Catalog with GCP Services"
+displayName:  GCP Service Broker
+
+tags: gcp, google, broker
+providerDisplayName: Google
+longDescription: The GCP Service Broker.
+bindable: false
+provisionOnlyOnce: true
