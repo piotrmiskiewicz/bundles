@@ -1,0 +1,6 @@
+remove:
+values.yaml:
+
+broker.service_account_json
+
+remove service_account from secrets.yaml
