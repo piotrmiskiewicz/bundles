@@ -78,3 +78,9 @@ mysql:
   ca_cert: ''
   client_cert: ''
   client_key: ''
+
+jobs:
+  kubectlImage:
+    repository: eu.gcr.io/kyma-project/test-infra/alpine-kubectl
+    tag: v20190325-ff66a3a
+    pullPolicy: IfNotPresent
