@@ -18,7 +18,7 @@ spec:
             annotations:
                  sidecar.istio.io/inject: "false"
         spec:
-            serviceAccountName: {{ template "fullname" . }}
+            serviceAccountName: {{ template "gcp-service-broker.fullname" . }}
             restartPolicy: Never
             containers:
                 - name: broker-checker

@@ -18,7 +18,7 @@ spec:
             annotations:
                 sidecar.istio.io/inject: "false"
         spec:
-            serviceAccountName: {{ template "fullname" . }}
+            serviceAccountName: {{ template "gcp-service-broker.fullname" . }}
             restartPolicy: Never
             containers:
                 - name: broker-remover
@@ -27,7 +27,7 @@ spec:
                   command: ["/bin/sh","-c"]
                   args:
                     - |
-                      kubectl delete servicebroker -n {{ .Release.Namespace }} {{ template "fullname" . }};
+                      kubectl delete servicebroker -n {{ .Release.Namespace }} {{ template "gcp-service-broker.fullname" . }};
                       while :
                         do
                           if [[ -z "$(kubectl get servicebroker -n {{ .Release.Namespace }} {{ template "gcp-service-broker.fullname" . }})" ]]
