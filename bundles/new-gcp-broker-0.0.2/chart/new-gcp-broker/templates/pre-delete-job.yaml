@@ -1,9 +1,9 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-    name: aws-service-broker-job-delete
+    name: gcp-service-broker-job-delete
     labels:
-        app: {{ template "fullname" . }}
+        app: {{ template "gcp-service-broker.fullname" . }}
         chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
         release: "{{ .Release.Name }}"
         heritage: "{{ .Release.Service }}"
