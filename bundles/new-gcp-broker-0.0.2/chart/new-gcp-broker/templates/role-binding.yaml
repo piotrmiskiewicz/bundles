@@ -9,9 +9,9 @@ metadata:
         heritage: "{{ .Release.Service }}"
 subjects:
     - kind: ServiceAccount
-      name: {{ template "fullname" . }}
+      name: {{ template "gcp-service-broker.fullname" . }}
       namespace: {{ .Release.Namespace }}
 roleRef:
     apiGroup: rbac.authorization.k8s.io
     kind: Role
-    name: {{ template "fullname" . }}
+    name: {{ template "gcp-service-broker.fullname" . }}
