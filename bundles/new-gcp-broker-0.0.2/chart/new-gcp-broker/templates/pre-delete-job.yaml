@@ -30,7 +30,7 @@ spec:
                       kubectl delete servicebroker -n {{ .Release.Namespace }} {{ template "fullname" . }};
                       while :
                         do
-                          if [[ -z "$(kubectl get servicebroker -n {{ .Release.Namespace }} {{ template "fullname" . }})" ]]
+                          if [[ -z "$(kubectl get servicebroker -n {{ .Release.Namespace }} {{ template "gcp-service-broker.fullname" . }})" ]]
                             then
                               echo "ServiesBroker has been removed. Job is done.";
                               break;

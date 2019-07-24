@@ -3,7 +3,7 @@ kind: Job
 metadata:
     name: gcp-service-broker-check-job
     labels:
-        app: {{ template "gcp-service-broker.fullname" . }}
+        app: {{ template "fullname" . }}
         chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
         release: "{{ .Release.Name }}"
         heritage: "{{ .Release.Service }}"
@@ -42,8 +42,8 @@ spec:
                       limit=180;
                       while [ "$i" -le "$limit" ];
                       do
-                          BROKER_TYPE=$(kubectl get servicebroker -n {{ .Release.Namespace }} {{ template "fullname" . }} -o jsonpath="{.status.conditions[0].type}")
-                          BROKER_STATUS=$(kubectl get servicebroker -n {{ .Release.Namespace }} {{ template "fullname" . }} -o jsonpath="{.status.conditions[0].status}")
+                          BROKER_TYPE=$(kubectl get servicebroker -n {{ .Release.Namespace }} {{ include "gcp-service-broker.fullname" . }} -o jsonpath="{.status.conditions[0].type}")
+                          BROKER_STATUS=$(kubectl get servicebroker -n {{ .Release.Namespace }} {{ include "gcp-service-broker.fullname" . }} -o jsonpath="{.status.conditions[0].status}")
                           if [[ "$BROKER_TYPE" == "Ready" ]] && [[ "$BROKER_STATUS" == "True" ]];
                             then
                               echo "ServiesBroker is ready. Job is done.";
