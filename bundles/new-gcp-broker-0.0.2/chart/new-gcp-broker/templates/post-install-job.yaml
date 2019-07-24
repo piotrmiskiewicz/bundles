@@ -27,16 +27,6 @@ spec:
                   command: ["/bin/sh","-c"]
                   args:
                     - |
-                      EXPECTED_SECRET_NAME={{ .Values.secretName }}
-                      SECRET_NAME=$(kubectl get secret -n {{ .Release.Namespace }} {{ .Values.secretName }} -o jsonpath="{.metadata.name}")
-                      if [[ "$SECRET_NAME" == "$EXPECTED_SECRET_NAME" ]] ;
-                        then
-                          echo "Success! Secret is present.";
-                        else
-                          echo "Failure! Secret '$EXPECTED_SECRET_NAME' is not present";
-                          exit 1;
-                      fi
-
                       success=false;
                       i=1;
                       limit=180;
