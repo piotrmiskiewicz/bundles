@@ -15,8 +15,8 @@
 replicaCount: 1
 
 image:
-  repository: awalach/gcp-service-broker
-  tag: latest
+  repository: http://eu.gcr.io/kyma-project/incubator/pr/gcp-service-broker
+  tag: PR-1
   pullPolicy: IfNotPresent
 
 # Settings for integrating the broker with the Kubernetes Service Catalog.

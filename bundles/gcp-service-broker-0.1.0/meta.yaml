@@ -1,0 +1,13 @@
+name: new-gcp-broker
+version: 0.0.1
+id: cbc4ce74-b402-4ff6-b230-2a079cf1706d
+description: "Extends the Service Catalog with GCP Services"
+displayName:  GCP Service Broker
+
+tags: gcp, google, broker
+providerDisplayName: "Google Cloud Platform"
+longDescription: "Open Service Broker for Google Cloud Platform"
+documentationURL: https://github.com/GoogleCloudPlatform/gcp-service-broker
+imageURL: https://cloud.google.com/_static/images/cloud/icons/favicons/onecloud/apple-icon.png
+bindable: false
+provisionOnlyOnce: true
