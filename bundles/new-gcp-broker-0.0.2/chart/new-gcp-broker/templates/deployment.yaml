@@ -16,11 +16,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "gcp-service-broker.fullname" . }}
-  labels:
-    app.kubernetes.io/name: {{ include "gcp-service-broker.name" . }}
-    helm.sh/chart: {{ include "gcp-service-broker.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    labels:
+        app: {{ template "gcp-service-broker.fullname" . }}
+        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        release: "{{ .Release.Name }}"
+        heritage: "{{ .Release.Service }}"
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
@@ -29,9 +29,11 @@ spec:
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
     metadata:
-      labels:
-        app.kubernetes.io/name: {{ include "gcp-service-broker.name" . }}
-        app.kubernetes.io/instance: {{ .Release.Name }}
+    labels:
+        app: {{ template "gcp-service-broker.fullname" . }}
+        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        release: "{{ .Release.Name }}"
+        heritage: "{{ .Release.Service }}"
     spec:
       containers:
         - name: {{ .Chart.Name }}

@@ -31,12 +31,6 @@ service:
   type: ClusterIP
   port: 80
 
-ingress:
-  enabled: false
-  hosts:
-    - host: chart-example.local
-      paths: []
-
 broker:
   # Basicauth credentials the service catalog or CF will use to authenticate
   # to the broker. If the password is blank, it will be auto-generated.
