@@ -5,6 +5,9 @@ type: Overview
 
 >**NOTE:** To provision this class, first you must create a Secret. Read the following document to learn how.
 
+
+
+BIG CHANGE
 The Google Cloud Platform Service Broker class exposes services from the [Google Cloud Platform Service Broker](https://cloud.google.com/kubernetes-engine/docs/concepts/google-cloud-platform-service-broker)
 in a given Namespace of the Kyma cluster.
 
