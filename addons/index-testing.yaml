@@ -8,3 +8,7 @@ entries:
     - name: redis
       description: "Redis service"
       version: 0.0.3
+  acc-testing:
+    - name: acc-testing
+      description: "Acceptance testing addon"
+      version: 0.0.1
