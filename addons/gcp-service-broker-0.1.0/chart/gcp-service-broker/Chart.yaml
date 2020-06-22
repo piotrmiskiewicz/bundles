@@ -25,7 +25,3 @@ keywords:
 home: https://github.com/GoogleCloudPlatform/gcp-service-broker
 sources:
   - https://github.com/GoogleCloudPlatform/gcp-service-broker
-dependencies:
-- name: mysql
-  repository: https://kubernetes-charts.storage.googleapis.com/
-  version: 0.15.0
